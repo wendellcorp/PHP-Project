@@ -5,7 +5,17 @@
 
 	<link rel="stylesheet" type="text/css" href="CSS/estil.css">
 	<title>LOJA</title>
-    <script type="text/javascript">
+	<script type = "text/javascript" src = "js/jquery-3.4.1.min.js"></script>
+
+	<script type = "text/javascript">
+    
+    $('document').ready(function(){
+        $('body').hide();
+        $('body').fadeIn('slow');
+    });
+  </script>
+
+  <script type="text/javascript">
 
 		function Corrigir(){
 			<?php
@@ -30,6 +40,7 @@
 			$user = "root";
 			$pass = "";
 			$dbname = "mercadinho";
+			
 			$nomeprod = $_POST['Produto'];
 			$precoprod = $_POST['Preco'];
 			$categprod = $_POST['Categoria'];
@@ -43,6 +54,7 @@
 
 			if($conexao->query($insert)===TRUE) {
 				echo "Cadastrado com Sucesso!";
+				
 			}else{
 				echo "Cadastro bunro";
 			}
@@ -95,13 +107,21 @@
         }
 	</script>
 </head>
-<body style="font-family: Segoe UI; background-color: #FFF046;">
+<body style="font-family: Segoe UI; background-color: #FFF046; margin:0;">
+
+	<div class = "jumbotron text-center">
+		<h1>Loja lojona</h1>
+	</div>
+
 	<div class = "container-fluid">
+		
 		<form  action = "Loja.php" method = "POST">		
 			<div class = "form-group">
 				<div class = "row">
 					<div class = "col-lg-1"></div>
-					<h2>Cadastrar produtos</h2>
+					<div class = "col-lg-4">
+						<h3>Cadastrar produtos</h3>
+					</div>
 				</div>
 					
 				<div class = "row">
@@ -114,14 +134,14 @@
 						Preco do Produto:<br>
 						<input type="text" name="Preco" class = "form-control">
 					</div>
-						<div class = "col-lg-2">
+					<div class = "col-lg-2">
 						Categoria:<br>
 						<input type="text" name="Categoria" class = "form-control">
-						</div>	
-						<div class = "col-lg-2"><br>
+					</div>	
+					<div class = "col-lg-2"><br>
 						<input onclick="Cadastrar()" type="submit" value="Enviar Produto" class = "btn btn-secondary">
-						</div>
 					</div>
+				</div>
 			</div>
 		</form>
 		<br>
@@ -129,7 +149,7 @@
 			<div class = "form-group">
 				<div class = "row">
 					<div class = "col-lg-1"></div>
-					<h2>Excluir produtos</h2>
+					<h3>Excluir produtos</h3>
 				</div>		
 					<div class = "row">
 					<div class = "col-lg-1"></div>
@@ -149,7 +169,7 @@
 			<div class = "form-group">
 				<div class = "row">
 					<div class = "col-lg-1"></div>
-					<h2>Atualizar produtos</h2>
+					<h3>Atualizar produtos</h3>
 				</div>
 					<div class = "row">
 					<div class = "col-lg-1"></div>
@@ -174,7 +194,8 @@
 		<br>
 		<div class = "row">
 			<div class ="col-1"></div>
-			<table class = "table table-bordered table-hover col-lg-6">
+			<div class = "table-responsive col-lg-6">
+			<table class = "table table-bordered table-hover ">
 				<thead>
 					<tr>
 						<th scope="col">cod</th>
@@ -268,6 +289,7 @@
 					</tr>
 				</tbody>
 			</table>
+			</div>
 		</div>
 	</div>
 </body>
