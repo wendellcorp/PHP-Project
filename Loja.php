@@ -195,7 +195,7 @@
 		<div class = "row">
 			<div class ="col-1"></div>
 			<div class = "table-responsive col-lg-6">
-			<table class = "table table-bordered table-hover ">
+			<table class = "table table-light table-bordered table-hover ">
 				<thead>
 					<tr>
 						<th scope="col">cod</th>
